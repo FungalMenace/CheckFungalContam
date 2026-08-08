@@ -9,6 +9,14 @@ contaminants with interactive charts.
 no build step to view it, and no data leaves the browser. Open it by
 double-clicking `index.html`, or host it anywhere static (e.g. GitHub Pages).
 
+## Live
+
+<!-- TODO: replace with the permanent astro.caltech.edu/checkfungalcontam alias once IT sets it up -->
+**Try it:** https://sites.astro.caltech.edu/~aam/checkfungalcontam/
+
+*(Interim link on a personal Caltech web directory; a permanent institutional
+URL will replace it. Not the citation URL — cite the permanent alias in the paper.)*
+
 ## Use it
 
 - **Locally:** open `index.html` in any browser (keep `data.js` beside it).
