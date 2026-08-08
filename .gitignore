@@ -1,0 +1,4 @@
+# data.js IS committed on purpose — the static page needs it without a build step.
+.DS_Store
+__pycache__/
+*.pyc
