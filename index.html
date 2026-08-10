@@ -312,12 +312,17 @@ function render(){
 }
 function drawHeatmap(box,rows,locCols){
   const R=rows.length,C=locCols.length;
-  const cw=Math.max(46,Math.min(92,540/C)),ch=27,left=196,top=66,W=left+C*cw+16,H=top+R*ch+10;
+  const cw=Math.max(46,Math.min(92,540/C)),ch=27,left=196;
+  const maxLen=Math.max(1,...locCols.map(c=>String(c).length));
+  const top=Math.min(160,26+Math.round(maxLen*6.6));   // headroom for vertical labels
+  const W=left+C*cw+16,H=top+R*ch+10;
   let max=0; for(const s of rows) for(const v of s.reads) max=Math.max(max,v);
   const Lg=v=>Math.log1p(v)/Math.log1p(max||1);
   const col=t=>{const a=[231,241,238],b=[46,125,107];return `rgb(${a.map((x,i)=>Math.round(x+(b[i]-x)*t)).join(",")})`;};
   let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:${W}px">`;
-  locCols.forEach((c,j)=>s+=`<text x="${left+j*cw+cw/2}" y="${top-9}" text-anchor="end" transform="rotate(-40 ${left+j*cw+cw/2} ${top-9})">${c}</text>`);
+  // vertical column labels — every letter visible, reads bottom-to-top
+  locCols.forEach((c,j)=>{ const cx=left+j*cw+cw/2;
+    s+=`<text x="${cx}" y="${top-6}" text-anchor="start" transform="rotate(-90 ${cx} ${top-6})" style="dominant-baseline:central">${c}</text>`; });
   rows.forEach((row,i)=>{
     s+=`<text x="${left-9}" y="${top+i*ch+ch/2+4}" text-anchor="end">${row.species.length>27?row.species.slice(0,26)+"…":row.species}</text>`;
     row.reads.forEach((v,j)=> s+=`<rect x="${left+j*cw+1}" y="${top+i*ch+1}" width="${cw-2}" height="${ch-2}" rx="3" fill="${v>0?col(Lg(v)):'var(--sq0)'}"><title>${row.species} · ${locCols[j]} · ${v} reads</title></rect>`);

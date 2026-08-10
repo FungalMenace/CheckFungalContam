@@ -12,17 +12,17 @@ The web root for `astro.caltech.edu/~aam` is typically `~/public_html`
 
 ```bash
 # on the server: make a folder
-ssh aam@astro.caltech.edu 'mkdir -p ~/public_html/fungi'
+ssh aam@astro.caltech.edu 'mkdir -p ~/public_html/checkfungalcontam'
 
 # from a local checkout: copy the two files it needs
-scp index.html data.js aam@astro.caltech.edu:~/public_html/fungi/
+scp index.html data.js aam@astro.caltech.edu:~/public_html/checkfungalcontam/
 
 # permissions (the usual ~user-dir gotcha)
-ssh aam@astro.caltech.edu 'chmod o+x ~ ; chmod 755 ~/public_html ~/public_html/fungi ; chmod 644 ~/public_html/fungi/*'
+ssh aam@astro.caltech.edu 'chmod o+x ~ ; chmod 755 ~/public_html ~/public_html/checkfungalcontam ; chmod 644 ~/public_html/checkfungalcontam/*'
 ```
 
-Live at: `https://astro.caltech.edu/~aam/fungi/`
-Update later by re-`scp`-ing the two files.
+Live (canonical, non-personal): `https://sites.astro.caltech.edu/checkfungalcontam/`
+(also reachable at `.../~aam/checkfungalcontam/`). Update later by re-`scp`-ing the two files.
 
 ## Option B — GitHub Pages
 

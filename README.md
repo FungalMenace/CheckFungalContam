@@ -11,11 +11,7 @@ double-clicking `index.html`, or host it anywhere static (e.g. GitHub Pages).
 
 ## Live
 
-<!-- TODO: replace with the permanent astro.caltech.edu/checkfungalcontam alias once IT sets
-     it up. Cite that permanent alias (not this ~aam URL) in the paper. -->
-**Try it:** https://sites.astro.caltech.edu/~aam/checkfungalcontam/
-
-*(Interim link on a personal Caltech web directory; a permanent institutional URL will replace it.)*
+**Try it:** https://sites.astro.caltech.edu/checkfungalcontam/
 
 ## Use it
 
