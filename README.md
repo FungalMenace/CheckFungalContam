@@ -74,3 +74,10 @@ Supported in part by the Translational Research Institute for Space Health
 (TRISH), a NASA-funded consortium, through the Caltech Space-Health Innovation
 Fund (CSIF). Loosely based on a similar tool built for bacteria
 ([checkcontam.streamlit.app](https://checkcontam.streamlit.app)).
+
+## License
+
+Code (the page and `build_data.py`) is released under the **MIT License** (see
+[`LICENSE`](LICENSE)). The embedded dataset (`data.js` and the CSVs in `data/`)
+is licensed **CC BY 4.0**, consistent with the CaltechDATA record
+([10.22002/rttgr-mmc07](https://doi.org/10.22002/rttgr-mmc07)).
